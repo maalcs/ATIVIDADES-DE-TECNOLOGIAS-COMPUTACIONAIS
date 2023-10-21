@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testando</title>
+    <style>
+        .btlayout{
+            font-size: 15px;
+            background-color: hotpink;
+            border: 3px o;
+            border-radius: 15px;
+            color: pink;
+        }
+
+        .btlayout:hover{
+            background-color: rgb(201, 83, 142);
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body style="background-color: powderblue; font-family: monospace; ">
+<body id="body"style="background-color: powderblue; font-family: monospace; ">
     <h1 style="color:hotpink; font-weight: bolder;">Cálculo de Média</h1>
     <div style="padding: 10px; background-color: palevioletred; color: pink; box-shadow: 5px 2px gray; border: 1px gray;">
         <label for="nota1">nota 1: </label>
@@ -13,11 +27,13 @@
         <label for="nota2">nota 2: </label>
         <input id="nota2" type="text"><br>
         <br>
-        <button onclick="calcular();" style="background-color: transparent; color: pink; border-radius: 15px; border-color: gray;">Calcular</button>
-        <button onclick="limpar();"  style="background-color: transparent; color: pink; border-radius: 15px; border-color: gray;">Limpar</button><br>
+        <button onclick="calcular();" style="background-color: transparent;     color: pink; border-radius: 15px; border-color: gray;">Calcular</button>
+        <button onclick="limpar();"  style="background-color: transparent; color: pink; border-radius: 15px; border-color: gray;">Limpar</button>
+        <button class="btlayout" onclick="altlayout();">modo dark</button>
         <h3 class="result">Resultado</h3><br>
     </div>
     <script>
+        let modo=0;
         function calcular(){
             const nota1 = parseFloat(document.getElementById("nota1").value);
             const nota2 = parseFloat(document.getElementById("nota2").value);
@@ -32,6 +48,32 @@
         caixa[0].value = "";
         caixa[1].value = "";
         }
+
+        function altlayout() {
+            const minhadiv =
+            document.getElementsByTagName("div")[0].style;
+            meubotao = document.getElementsByTagName("button")[2].style;
+            const body = document.getElementById("body").style;
+            if(modo==0){
+                body.backgroundColor = "rgb(51, 19, 30)";
+                minhadiv.backgroundColor = "black";
+                minhadiv.color = "hotpink";
+                meubotao.color = "pink";
+                document.getElementsByTagName("button")[2].innerHTML = "modo light";
+                modo=1;
+            }else{
+                body.backgroundColor = "powderblue";
+                minhadiv.padding = "10px";
+                minhadiv.color = "pink";
+                minhadiv.border = "2px solid pink";
+                minhadiv.backgroundColor = "palevioletred";
+                meubotao.color = "pink";
+                meubotao.backgroundColor = "hotpink";
+                document.getElementsByTagName("button")[2].innerHTML = "modo dark";
+                modo=0;
+
+        }
+    }
     </script>
 </body>
 </html>
