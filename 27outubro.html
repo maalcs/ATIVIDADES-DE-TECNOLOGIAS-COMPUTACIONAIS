@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(31, 30, 29);">
+    <h1 style="color: rgb(226, 28, 28); text-align: center;">Doces ou travessuras?</h1>
+    <img src="img/evanhallow.jpg" alt="" width="100%" max-heigh="20%" id="img1">
+    <button onclick="trocar();">trocar imagem</button>
+
+    <script>
+        let modo = 0;
+        function trocar(){
+            if(modo==0){
+            document.getElementById("img1").src = "img/muitosevan.jpg";
+            modo=1;
+        } else {
+            document.getElementById("img1").src = "img/evanhallow.jpg";
+            modo = 0;
+        }
+    }
+    </script>
+</body>
+</html>
