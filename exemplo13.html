@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 13</title>
+</head>
+<body style="font-size: 26px;">
+    <h2>Exemplo 13 <br> Mouse over/out</h2>
+
+    <div onmouseover="sanrio(this);" onmouseout="sanrio2(this)";
+    
+    
+    style="background-color: black; color: hotpink; width: 400px; height: 200px;font-size: 100px;padding-top: 60px;padding-left: 30px;">Kuromi</div>
+
+    <script>
+        function sanrio(objeto){
+            objeto.innerHTML = "Hello Kitty";
+            objeto.style.fontSize = "80px";
+            objeto.style.backgroundColor = "hotpink";
+            objeto.style.color = "black";
+        }
+
+        function sanrio2(objeto){
+            objeto.innerHTML = "Kuromi";
+            objeto.style.fontSize = "100px";
+            objeto.style.backgroundColor = "black";
+            objeto.style.color = "hotpink";
+        }
+    </script>
+    
+</body>
+</html>
