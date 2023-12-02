@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 15</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: beige;
+        }
+        form{
+            background-color: plum;
+            padding: 50px;
+            border-radius: 20px;
+            border: 6px solid;
+            border-style: outset;
+            margin: auto;
+            width: 60%;
+        }
+        input[type="text"]{
+            width: 240px;
+            height: 25px;
+            border-radius: 7px;
+            font-size: 18px;
+        }
+        input[type="text"]:focus{
+            outline: 3px solid hsla(313, 48%, 40%, 0.8);
+        }
+        input[type="submit"]{
+            font-size: 18px;
+            border-radius: 6px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body style="font-size: 26px;">
+    <h1 style="color: rgb(193, 145, 238);">Exemplo 15</h1>
+    <h2 style="color: rgb(187, 162, 211);">Validação de formulário</h2>
+    <form name="form" action="cadastro.php" onsubmit="return validarForm();" method="post">
+        <label for="nome" style="color: beige;">Nome:</label>
+        <input name="nome" id="nome" type="text"> <br>
+        <input id="enviar" type="submit" value="Enviar">
+    </form>
+    <script>
+        function validarForm() {
+            let dados = document.forms["form"]["nome"].value;
+            if (dados == "") {
+                alert("Preencha o nome corretamente!");
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>
